@@ -71,23 +71,61 @@
       >
       <label for="feminino">Feminino</label><br>
 
-      <input
-        type="radio"
-        id="outro"
-        name="genero"
-        value="outro"
-      >
-      <label for="outro">Outro</label><br>
+     <script>
+    function mostrarCampoOutro() {
+      const outroRadio = document.getElementById("outro");
+      const campoOutro = document.getElementById("campo-outro");
 
-      <input
-        type="radio"
-        id="prefiro_nao_informar"
-        name="genero"
-        value="prefiro_nao_informar"
-      >
-      <label for="prefiro_nao_informar">
-        Prefiro não informar
-      </label>
+      if (outroRadio.checked) {
+        campoOutro.style.display = "block";
+      } else {
+        campoOutro.style.display = "none";
+      }
+    }
+  </script>
+
+  <fieldset>
+    <legend>Gênero</legend>
+
+    <input
+      type="radio"
+      id="masculino"
+      name="genero"
+      value="masculino"
+    >
+    <label for="masculino">Masculino</label><br>
+
+    <input
+      type="radio"
+      id="feminino"
+      name="genero"
+      value="feminino"
+    >
+    <label for="feminino">Feminino</label><br>
+
+    <input
+      type="radio"
+      id="outro"
+      name="genero"
+      value="outro"
+      onclick="mostrarCampoOutro()"
+    >
+    <label for="outro">Outro</label><br>
+
+    <input
+      type="radio"
+      id="prefiro_nao_informar"
+      name="genero"
+      value="prefiro_nao_informar"
+    >
+    <label for="prefiro_nao_informar">
+      Prefiro não informar
+    </label>
+
+    <div id="campo-outro" style="display: none; margin-top: 10px;">
+      <label for="genero_outro">
+        Especifique:
+      </label><br>
     </fieldset>
 
     <p>

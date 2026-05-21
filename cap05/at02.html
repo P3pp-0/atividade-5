@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro de Usuário</title>
+
+  <script>
+    function mostrarCampoOutro() {
+      const outro = document.getElementById("outro");
+      const campo = document.getElementById("genero_outro");
+
+      if (outro.checked) {
+        campo.style.display = "inline-block";
+      } else {
+        campo.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -60,6 +73,7 @@
         id="masculino"
         name="genero"
         value="masculino"
+        onclick="mostrarCampoOutro()"
       >
       <label for="masculino">Masculino</label><br>
 
@@ -68,64 +82,38 @@
         id="feminino"
         name="genero"
         value="feminino"
+        onclick="mostrarCampoOutro()"
       >
       <label for="feminino">Feminino</label><br>
 
-     <script>
-    function mostrarCampoOutro() {
-      const outroRadio = document.getElementById("outro");
-      const campoOutro = document.getElementById("campo-outro");
+      <input
+        type="radio"
+        id="outro"
+        name="genero"
+        value="outro"
+        onclick="mostrarCampoOutro()"
+      >
+      <label for="outro">Outro</label>
 
-      if (outroRadio.checked) {
-        campoOutro.style.display = "block";
-      } else {
-        campoOutro.style.display = "none";
-      }
-    }
-  </script>
+      <input
+        type="text"
+        id="genero_outro"
+        name="genero_outro"
+        placeholder="Especifique"
+        style="display: none; margin-left: 10px;"
+      >
+      <br>
 
-  <fieldset>
-    <legend>Gênero</legend>
-
-    <input
-      type="radio"
-      id="masculino"
-      name="genero"
-      value="masculino"
-    >
-    <label for="masculino">Masculino</label><br>
-
-    <input
-      type="radio"
-      id="feminino"
-      name="genero"
-      value="feminino"
-    >
-    <label for="feminino">Feminino</label><br>
-
-    <input
-      type="radio"
-      id="outro"
-      name="genero"
-      value="outro"
-      onclick="mostrarCampoOutro()"
-    >
-    <label for="outro">Outro</label><br>
-
-    <input
-      type="radio"
-      id="prefiro_nao_informar"
-      name="genero"
-      value="prefiro_nao_informar"
-    >
-    <label for="prefiro_nao_informar">
-      Prefiro não informar
-    </label>
-
-    <div id="campo-outro" style="display: none; margin-top: 10px;">
-      <label for="genero_outro">
-        Especifique:
-      </label><br>
+      <input
+        type="radio"
+        id="prefiro_nao_informar"
+        name="genero"
+        value="prefiro_nao_informar"
+        onclick="mostrarCampoOutro()"
+      >
+      <label for="prefiro_nao_informar">
+        Prefiro não informar
+      </label>
     </fieldset>
 
     <p>
